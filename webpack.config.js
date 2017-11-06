@@ -23,6 +23,21 @@ module.exports = {
                 }
             }]
         },
+
+        module: {
+            rules: [{
+                test: /\.scss$/,
+                  use: [{
+                    loader: "style-loader"
+                  }, {
+                    loader: "css-loader" 
+                  }, {
+                    loader: "sass-loader"
+                  }]
+            }]
+          },
+
+
         // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
         // Without this the console says all errors are coming from just coming from bundle.js
         devtool: "eval-source-map"
