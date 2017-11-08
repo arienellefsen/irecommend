@@ -1,2 +1,2 @@
-# irecommend
+# iRecommend
 App Mern stack
