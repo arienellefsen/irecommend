@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
+const helpers = require("../utils/helpers");
 
-const Login = (props) => {
-  return (
-    <header className="top">
-      <h1 className="red">Login</h1>
-      <button type="button" className="btn btn-primary">Login with Facebook</button>
+class Login extends Component {
+    onClick() {
+        // axios request
+        helpers.saveUser();
+      }
 
-    </header>
-  )
-}
+      render() {
+        return (
+          <button onClick={() => this.onClick() }>Login with Facebook</button>
+        );
+      }
+    }
 
 export default Login;
