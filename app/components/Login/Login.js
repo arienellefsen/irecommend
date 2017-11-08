@@ -1,15 +1,29 @@
 import React, {Component} from 'react';
 const helpers = require("../utils/helpers");
+import FacebookLogin from 'react-facebook-login';
 
 class Login extends Component {
-    onClick() {
+    responseFacebook(response) {
+      console.log(response);
+    }
+
+    Login() {
         // axios request
         helpers.saveUser();
       }
 
       render() {
         return (
-          <button onClick={() => this.onClick() }>Login with Facebook</button>
+            <div>
+              <button onClick={() => this.Login() }>Login with Facebook</button>
+              <FacebookLogin
+                    appId="144711106077097"
+                    autoLoad={true}
+                    fields="name,email,picture"
+                    scope="public_profile,user_friends,user_actions.books"
+                    callback={this.responseFacebook}
+                    />
+            </div>
         );
       }
     }
