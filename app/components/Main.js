@@ -1,12 +1,26 @@
-import React from 'react';
-import Header from './Header/Header';
+import React, {Component} from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from 'react-router-dom';
 
-class Main extends React.Component {
+import Login from './Login/Login';
+import NotFound from './NotFound/NotFound';
 
-    render() {
-        return (
-            <Header  tagline="new app"/>
-        )
+class Main extends Component{
+    
+    render(){
+      return (
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+     </BrowserRouter>
+      )
     }
-}
+  }
 export default Main;
