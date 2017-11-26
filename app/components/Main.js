@@ -16,6 +16,8 @@ class Main extends Component{
         <div>
           <Switch>
             <Route exact path="/" component={Login} />
+            {/* <Route path="/login" component={Login}/> */}
+
             <Route component={NotFound} />
           </Switch>
         </div>
